@@ -1,14 +1,77 @@
 .info {
-    border: 2px solid green;
+    color: whitesmoke;
+    border: 3px solid black;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    max-width: 900px;
+    height: 430px;
+    width: 700px;
+    padding-left: 8px;
+    
+    .dateYear {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        h1 {
+            // border: 1px solid violet;
+        }
+    }
+    .dateGenre {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        font-weight: 300;
+        color: #AFAFAF;
+    }
+    
+    .character {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+        // padding-right: 100px;
+        width: 100%;
+        
+        .characterContainer {
+            text-align: center;
+
+            p {
+                font-weight: 300;
+                color: #AFAFAF;
+            }
+        }
+    }
     
     
     .plot {
-        border: 2px solid orange;
-        width: 200px;
+        margin-top: 20px;
+        width: 100%;
+        
+        .plotContainer {
+            width: 80%;
+
+            p {
+                color: #AFAFAF;
+            }
+            
+        }
+    }
+
+    .extra {
+        width: 100%;
+
+        .extraContainer {
+            margin-top: 20px;
+
+            p {
+                color: #AFAFAF;
+            }
+        }
     }
 }

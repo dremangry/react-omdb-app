@@ -1,5 +1,5 @@
 import "../styles/title.scss"
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import axios from 'axios'
 import Info from "./Info"
 
@@ -7,7 +7,7 @@ function Title() {
 
     //this state display an empty object fot the api 
     const [data, setData] = useState({})
-    const [title, setTitle] = useState('avengers')
+    const [title, setTitle] = useState('')
     const theKey = process.env.REACT_APP_RAPID_API_KEY
 
     const url = `https://www.omdbapi.com/?t=${title}&apikey=${theKey}`
@@ -17,16 +17,14 @@ function Title() {
                 setData(response.data)
                 console.log(response.data);
             })
-            // setTitle('')
+            setTitle('')
         }
     }
-    // useEffect(() => {
-    //     searchMovieTitle()
-    // }, [])
+    
 
     return (
         <div className="titleContainer">
-            <h1>what's in your mind</h1>
+            <h1>What's in your mind</h1>
 
             <div className="inputField">
                 <input
@@ -37,6 +35,7 @@ function Title() {
                     type="text" />
             </div>
 
+            {data.Title !== undefined &&
 
             <div className="dataContainer">
                     {/* <img className="bgImage" src={data.Poster} alt="" /> */}
@@ -46,6 +45,7 @@ function Title() {
 
                 <Info data={data} />
             </div>
+            }
         </div>
 
     )
